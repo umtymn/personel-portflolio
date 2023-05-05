@@ -1,1 +1,1 @@
-# personel-portflolio
+# personal-portfolio-powercoders

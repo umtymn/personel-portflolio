@@ -1,276 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Portfolio of Ümit</title>
-  <!-- EXTARNEL LINK CSS AND FONTAWSOMES LINK -->
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="https://kit.fontawesome.com/9b59ce0d1e.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <main>
-    <!-- BIG CONTAINER -->
-    <section class="container">
-      <!-- LEFTSIDE -->
-      <aside class="container-item-info">
-        <div class="container-item-info-foto">
-          <figure>
-            <img src="foto/profil.jpeg" alt="Web Developer" id="photo" />
-            <figcaption>
-              <h2>Ümit Yaman </h2>
-              <strong>Web Developer</strong>
-            </figcaption>
-          </figure>
-        </div>
-        <hr>
-        <div class="container-item-info-contact">
-          <h1 class="extra">CONTACT INFO</h1>
-          <ul class="container-item-info-contact-links">
-            <li>
-              <i class="fa fa-phone"></i>0787213137</li>
-            <li>
-              <i class="fa fa-duotone fa-envelope-open"></i>
-              <a href="mailto:umityaman23@gmail.com">umityaman23@gmail.com</a>
-            </li>
-            <li>
-              <i class="fa fa-duotone fa-envelope-open"></i>
-              <a href="https://www.linkedin.com/feed/">https://www.linkedin.com/</a>
-            </li>
-            <li>
-              <i class="fa fa-brands fa-github"></i>
-              <a href="https://github.com/umtymn">https://github.com/umtymn</a>
-            </li>
-            <li> <i class="fa fa-solid fa-location-dot"></i>Bireggstrasse 1, 6003, Lucerne, Switzerland</li>
-          </ul>
-        </div>
-        <hr>
-        <!-- HOBBIES -->
-        <h1>HOBBIES</h1>
-        <div class="container-item-info-hobbies">
-          <div class="hobby">
-            <i class="fas fa-book-open"></i>
-            <div class="text">Reading </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <!-- Css external link -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- fontawsome link -->
+    <script
+      src="https://kit.fontawesome.com/9b59ce0d1e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="./images/logo.png" alt="logo" />
+      <button id="dark-mode-btn" onclick="handleDarkMode()">
+        <svg
+          class="theme-toggle-dark svg-inline--fa fa-moon fa-w-16"
+          onclick="ToggleTheme()"
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="far"
+          data-icon="moon"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="currentColor"
+            d="M279.135 512c78.756 0 150.982-35.804 198.844-94.775 28.27-34.831-2.558-85.722-46.249-77.401-82.348 15.683-158.272-47.268-158.272-130.792 0-48.424 26.06-92.292 67.434-115.836 38.745-22.05 28.999-80.788-15.022-88.919A257.936 257.936 0 0 0 279.135 0c-141.36 0-256 114.575-256 256 0 141.36 114.576 256 256 256zm0-464c12.985 0 25.689 1.201 38.016 3.478-54.76 31.163-91.693 90.042-91.693 157.554 0 113.848 103.641 199.2 215.252 177.944C402.574 433.964 344.366 464 279.135 464c-114.875 0-208-93.125-208-208s93.125-208 208-208z"
+          ></path>
+        </svg>
+        <svg
+          class="theme-toggle-light active svg-inline--fa fa-sun fa-w-16"
+          onclick="ToggleTheme()"
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="far"
+          data-icon="sun"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="currentColor"
+            d="M494.2 221.9l-59.8-40.5 13.7-71c2.6-13.2-1.6-26.8-11.1-36.4-9.6-9.5-23.2-13.7-36.2-11.1l-70.9 13.7-40.4-59.9c-15.1-22.3-51.9-22.3-67 0l-40.4 59.9-70.8-13.7C98 60.4 84.5 64.5 75 74.1c-9.5 9.6-13.7 23.1-11.1 36.3l13.7 71-59.8 40.5C6.6 229.5 0 242 0 255.5s6.7 26 17.8 33.5l59.8 40.5-13.7 71c-2.6 13.2 1.6 26.8 11.1 36.3 9.5 9.5 22.9 13.7 36.3 11.1l70.8-13.7 40.4 59.9C230 505.3 242.6 512 256 512s26-6.7 33.5-17.8l40.4-59.9 70.9 13.7c13.4 2.7 26.8-1.6 36.3-11.1 9.5-9.5 13.6-23.1 11.1-36.3l-13.7-71 59.8-40.5c11.1-7.5 17.8-20.1 17.8-33.5-.1-13.6-6.7-26.1-17.9-33.7zm-112.9 85.6l17.6 91.2-91-17.6L256 458l-51.9-77-90.9 17.6 17.6-91.2-76.8-52 76.8-52-17.6-91.2 91 17.6L256 53l51.9 76.9 91-17.6-17.6 91.1 76.8 52-76.8 52.1zM256 152c-57.3 0-104 46.7-104 104s46.7 104 104 104 104-46.7 104-104-46.7-104-104-104zm0 160c-30.9 0-56-25.1-56-56s25.1-56 56-56 56 25.1 56 56-25.1 56-56 56z"
+          ></path>
+        </svg>
+      </button>
+    </header>
+    <main class="container">
+      <aside class="personal-info">
+        <figure>
+          <img
+            class="profile-img"
+            src="./images/profile-img.jpg"
+            alt="profile-img"
+          />
+          <figcaption>
+            <strong>Ümit Yaman</strong>
+            <p>Web Developer</p>
+            <div class="social-media-symbols">
+              <a class="link-social-media" href="https://www.facebook.com/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a class="link-social-media" href="https://twitter.com/"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a class="link-social-media" href="https://www.linkedin.com/feed/"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a class="link-social-media" href="https://github.com/umtymn"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </div>
+          </figcaption>
+        </figure>
+        <article class="contact-info">
+          <div class="contact-links">
+            <ul>
+              <li>
+                <a
+                  class="contact-links-item"
+                  href="skype:live:.cid.eb581c9d07a1400f"
+                >
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span>0787213137</span>
+                </a>
+                </li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Lucerne, Switzerland</span>
+              </li>
+              <li>
+                <a
+                  class="contact-links-item"
+                  href="mailto:umit.yaman@powercoder.org"
+                >
+                  <i class="fa-solid fa-square-envelope"></i>
+                  <span>umit.yaman@powercoders.org</span>
+                </a>
+              </li>
+              <li>
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>01.01.1991</span>
+              </li>
+            </ul>
           </div>
-          <div class="hobby">
-            <i class="fa-solid fa-person-swimming"></i>
-            <div class="text">Swimming</div>
-          </div>
-          <div class="hobby">
-            <i class="fa-solid fa-person-hiking"></i>
-            <div class="text">Hiking</div>
-          </div>
-          <div class="hobby">
-            <i class="fa-solid fa-film"></i>
-            <div class="text">Movies</div>
-          </div>
-        </div>
+        </article>
+        <a
+          id="link-download-CV"
+          href="CV_UmitYAMAN.pdf"
+          download="CV_UmitYAMAN.pdf"
+        >
+          Download CV
+        </a>
       </aside>
-      <!-- RIGHTSIDE -->
-      <section class="container-item-info-about">
-        <section class="container-item-info-about-first">
-          <div class="resume">
-            <h3 id="home">Who am I ?</h3>
-            <p>After graduating from law school in Turkey, I came to Switzerland in 2019 after working as a military prosecutor for a while. After my German course I joined HiCoders to take a course in IT and I have learned a lot so far. The IT world has become a very exciting place for me. I want to develop myself further and create new things. I am a person who is compatible with teamwork, has a working discipline and is open to innovations. 
-            </p>
-          </div>
-          <!-- NAVBAR -->
-          <nav class="navbar">
-            <a href="#home" class="links" id="active">Home</a>
-            <a href="#education" class="links">Education</a>
-            <a href="#skillsall" class="links">Skills-all</a>
-            <a href="#certificates" class="links">Certificates</a>
-            <a href="#contact" class="links">Contact With Me</a>
-          </nav>
-        </section>
-        <!-- EDUCATION -->
-        <article class="container-item-education" id="education">
-          <h1 class="gross">Education</h1>
-          <div class="hicoders">
-            <div class="hc">
-              <h3>HiCoders</h3>
-              <p>Fullstack Web Developer Course</p>
-            </div>
-            <div class="years">
-              <p>2022-...</p>
-            </div>
-          </div>
-          <div class="unilu1">
-            <div class="unilu">
-              <h3>University of Lucerne</h3>
-              <p>The guest student</p>
-            </div>
-            <div class="years">
-              <p>2021-2022</p>
-            </div>
-          </div>
-          <div class="unilu2">
-            <div class="unilu">
-              <h3>University of Lucerne</h3>
-              <p>The guest student</p>
-            </div>
-            <div class="years">
-              <p>2019-2020</p>
-            </div>
-          </div>
-          <div class="adu">
-            <div class="au">
-              <h3>Anadolu University</h3>
-              <p>Bachelor`s degree International Relationship</p>
-              <p></p>
-            </div>
-            <div class="years">
-              <p>2015-2016
+      <section class="content">
+        <nav class="navbar">
+          <button
+            class="tablinks"
+            id="defaultOpen"
+            onclick="openTab(event, 'home-page')"
+          >
+            <i class="nav-btn fa-solid fa-house"></i>
+            <br />
+            Home
+          </button>
+
+          <button class="tablinks" onclick="openTab(event, 'education')">
+            <i class="nav-btn fa-solid fa-school"></i>
+            <br />
+            Education
+          </button>
+
+          <button class="tablinks" onclick="openTab(event, 'skills')">
+            <i class="nav-btn fas fa-cogs"></i>
+            <br />
+            Skills
+          </button>
+
+          <button class="tablinks" onclick="openTab(event, 'certificates')">
+            <i class="nav-btn fa-solid fa-certificate"></i>
+            <br />
+            Certificates
+          </button>
+
+          <button class="tablinks" onclick="openTab(event, 'contact')">
+            <i class="nav-btn fa-solid fa-address-card"></i>
+            <br />
+            Contact
+          </button>
+        </nav>
+        <section class="tab-container">
+          <article class="tabcontent" id="home-page">
+            <div class="about-me">
+              <h2><span>About Me</span></h2>
+              <p>
+                Welcome to my website! My name is Ümit and I am a passionate web
+                developer based in Switzerland. I have always been fascinated by
+                technology and the way it can be used to improve people's lives.
+                My love for coding and design led me to pursue a career in web
+                development.
+              </p>
+              <p>
+                In addition to web development, I enjoy swimming, reading and
+                hiking. When I'm not coding, you can usually find me in the
+                mountains. Thank you for visiting my website, and I look forward
+                to working with you!
               </p>
             </div>
-          </div>
-          <div class="kou2">
-            <div class="kou">
-              <h3>Kocaeli University</h3>
-              <p>Masters`s degree Public Law</p>
-            </div>
-            <div class="years">
-              <p>2015-2016</p>
-            </div>
-          </div>
-          <div class="kou1">
-            <div class="kou">
-              <h3>Kocaeli University</h3>
-              <p>Bachelor`s degree Law</p>
-            </div>
-            <div class="years">
-              <p>2008-2012</p>
-            </div>
-          </div>
-        </article>
-        <!-- SKILLS-ALL -->
-        <article class="container-item-skillsall" id="skillsall">
-          <div class="tecnical-skills">
-            <!-- TECNICAL SKILLS -->
-            <h1 class="gross">Tecnical Skills</h1>
-            <div class="tecnical-skill-item">
-              <div class="tecnical-item-progress">
-                <label>HTML 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
-                <progress value="100" max="100"></progress>
-              </div>
-              <div class="tecnical-item-progress">
-                <label>CSS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
-                <progress value="90" max="100"></progress>
-              </div>
-              <div class="tecnical-item-progress">
-                <label>BOOTSTRAP:</label>
-                <progress value="90" max="100"></progress>
-              </div>
-              <div class="tecnical-item-progress">
-                <label>JAVASCRIPT:</label>&nbsp;
-                <progress value="75" max="100"></progress>
-              </div>
-              <div class="tecnical-item-progress">
-                <label>GIT&GITHUB:</label>
-                <progress value="90" max="100"></progress>
-              </div>
-              <div class="tecnical-item-progress">
-                <label>REACT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
-                <progress value="75" max="100"></progress>
-              </div>
-              <div class="tecnical-item-progress">
-                <label>NODEJS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
-                <progress value="20" max="100"></progress>
-              </div>
-            </div>
-          </div>
-          <!-- LANGUAGE -->
-          <div class="language-skills">
-            <h1 class="gross">Languages</h1>
-            <div class="language-skills-item">
-              <div class="language-skill-item-progress">
-                <div class="language-skill-item-progress">
-                  <label>German:</label>
-                  <progress value="90" max="100"></progress>
+            <div class="what-I-do">
+              <h3>What I do!</h3>
+              <div class="carts-div">
+                <div class="cart cart-one">
+                  <div class="cart-icon ui">
+                    <i class="fa-solid fa-swatchbook"></i>
+                  </div>
+                  <div class="cart-text">
+                    <h3>Ui/Ux Design</h3>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Nam volup
+                    </p>
+                  </div>
                 </div>
-                <div class="language-skill-item-progress">
-                  <label>English:</label>
-                  <progress value="70" max="100"></progress>
+                <div class="cart cart-two">
+                  <div class="cart-icon app">
+                    <i class="fa-solid fa-diagram-project"></i>
+                  </div>
+                  <div class="cart-text">
+                    <h3>App Development</h3>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Nam voluptatibus ipsum esse consequuntur ap
+                    </p>
+                  </div>
                 </div>
-                <div class="clanguage-skill-item-progress">
-                  <label>Turkish:</label>
-                  <progress value="100" max="100"></progress>
-                </div>
-                <div class="clanguage-skill-item-progress">
-                  <label>Zazaki :</label>
-                  <progress value="100" max="100"></progress>
-                </div>
-              </div>
-              <!-- SOFT SKILLS -->
-              <div class="soft-skills">
-                <h1 class="gross"><span class="property">Soft Skills</span></h1>
-                <div class="skills">
-                  <button class="btnm">Flexiblity</button>
-                </div>
-                <div class="skills flex">
-                  <button class="btnm">Leadership</button>
-                </div>
-                <div class="skills flex">
-                  <button class="btnm">Teamwork</button>
-                </div>
-                <div class="skills flex">
-                  <button class="btnm">Problem Solving</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-        <!-- CERTIFICATES -->
-        <article class="container-item-certificates" id="certificates">
-          <h1>Certificates</h1>
-          <div class="css advence">
-            <p><span><img src="https://brand.umich.edu/assets/brand/style-guide/logo-guidelines/U-M_Logo-Hex.png"
-                  alt="uni-photo" class="uni-photo"></span>
-              <p>University of Michigen</p>
-            </p>
-            <p class="program">Advanced Styling with Responsive Design</p>
-          </div>
 
-          <div class="css">
-            <p>
-              <span>
-                <img src="https://brand.umich.edu/assets/brand/style-guide/logo-guidelines/U-M_Logo-Hex.png"
-                  alt="uni-photo" class="uni-photo">
-              </span>
-              <p>University of Michigen</p>
-            </p>
-            <p class="program">Introduction to CSS3</p>
-          </div>
-          <div class="html">
-            <p>
-              <span>
-                <img src="https://brand.umich.edu/assets/brand/style-guide/logo-guidelines/U-M_Logo-Hex.png"
-                  alt="uni-photo" class="uni-photo">
-              </span>
-              <p>University of Michigen</p>
-            </p>
-            <p class="program">Introduction to HTML5</p>
-          </div>
-        </article>
-        <!-- CONTACT FORM -->
-        <section class="box-1" id="contact">
-          <h1>Contact With Me</h1>
-          <form action="contact-form">
-            <label class="box-2">Fullname *</label>
-            <input type="text" class="box-3" required />
-            <label class="box-2">Email *</label>
-            <input type="text" class="box-3" required />
-            <label class="box-2">Phone *</label>
-            <input type="tel" placeholder="(___) ___ __ __" class="box-3" required />
-            <label class="box-2">Password*</label>
-            <input type="password" placeholder="********" class="box-3" />
-            <button class="btn">Send</button>
-          </form>
+                <div class="cart cart-three">
+                  <div class="cart-icon">
+                    <i class="fa-solid fa-camera-retro photo-1"></i>
+                  </div>
+                  <div class="cart-text">
+                    <h3>Photography</h3>
+                    <p>
+                      Lorem ipsum dolor, sit e asperiores a modi, iusto
+                      repellendus vitae ad odit nisi quidem?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="cart cart-four">
+                  <div class="cart-icon">
+                    <i class="far fa-image photo-2"></i>
+                  </div>
+                  <div class="cart-text">
+                    <h3>Photography</h3>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Nam volupta?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="cart cart-five">
+                  <div class="cart-icon">
+                    <i class="fa-solid fa-gears management"></i>
+                  </div>
+                  <div class="cart-text">
+                    <h3>Management</h3>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Nam voluptatibus
+                    </p>
+                  </div>
+                </div>
+                <div class="cart cart-six">
+                  <div class="cart-icon development">
+                    <i class="fa-solid fa-code"></i>
+                  </div>
+                  <div class="cart-text">
+                    <h3>Web Development</h3>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Nam voluptatibus ipsum ess
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="tabcontent" id="education">
+            <h2><span>Education</span></h2>
+            <div class="carts-div">
+              <div class="cart cart-one">
+                <div class="cart-text">
+                  <h3>Powercoders</h3>
+                  <h5>ICT Work Integration Program</h5>
+                  <p>03.2023 - 06.2023</p>
+                </div>
+              </div>
+              <div class="cart cart-two">
+                <div class="cart-text">
+                  <h3>HiCoders</h3>
+                  <h5>Fullstack Web Developer Course</h5>
+                  <p>05.2022 - 06.2023</p>
+                </div>
+              </div>
+
+              <div class="cart cart-three">
+                <div class="cart-text">
+                  <h3>University of Lucerne</h3>
+                  <h5>The guest student</h5>
+                  <p>09.2021 - 06.2022</p>
+                  <p>09.2019 - 06.2020</p>
+                </div>
+              </div>
+
+              <div class="cart cart-four">
+                <div class="cart-text">
+                  <h3>Anadolu University</h3>
+                  <h5>Bachelor`s degree International in Relations</h5>
+                  <p>09.2014 - 07.2016</p>
+                </div>
+              </div>
+
+              <div class="cart cart-five">
+                <div class="cart-text">
+                  <h3>Kocaeli University</h3>
+                  <h5>Masters`s degree in International War Crimes</h5>
+                  <p>09.2015 - 07.2016</p>
+                </div>
+              </div>
+              <div class="cart cart-six">
+                <div class="cart-text">
+                  <h3>Kocaeli University</h3>
+                  <h5>Bachelor`s degree in Law</h5>
+                  <p>09.2008 - 09.2012</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="tabcontent" id="skills">
+            <h2><span>My Skills</span></h2>
+            <nav class="navbar-skills">
+              <button
+                class="tablinks-skills"
+                id="skillsDefaultOpen"
+                onclick="openTabSkills(event, 'tablinks-tecnical-skills')"
+              >
+                Tecnical Skills
+              </button>
+              <button
+                class="tablinks-skills"
+                onclick="openTabSkills(event, 'tablinks-soft-skills')"
+              >
+                Soft Skills
+              </button>
+            </nav>
+            <div
+              class="carts-div tabcontent-skills"
+              id="tablinks-tecnical-skills"
+            >
+              <div class="tabskills-content">
+                <div class="cart cart-one">
+                  <div class="cart-text">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png"
+                      alt="html-symbol"
+                    />
+                  </div>
+                  <div
+                    class="progress-bar bar-html"
+                    role="progressbar"
+                    aria-valuenow="95"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="cart cart-two">
+                  <div class="cart-text">
+                    <img
+                      src="https://3.bp.blogspot.com/-oRSUw_TmO9o/XIb61m88fcI/AAAAAAAAIq0/vnxl2zzsXEQsnHI2fH4GjKu_ZT0urRo4wCK4BGAYYCw/s1600/icon%2Bcss%2B3.png"
+                      alt="css-symbol"
+                    />
+                  </div>
+                  <div
+                    class="progress-bar bar-css"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="cart cart-three">
+                  <div class="cart-text">
+                    <img
+                      src="https://avatars.githubusercontent.com/u/2918581?s=280&v=4"
+                      alt="bootstrap-symbol"
+                    />
+                  </div>
+                  <div
+                    class="progress-bar bar-bootstrap"
+                    role="progressbar"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="cart cart-four">
+                  <div class="cart-text">
+                    <img
+                      src="https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png"
+                      alt="js-symbol"
+                    />
+                  </div>
+                  <div
+                    class="progress-bar bar-js"
+                    role="progressbar"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="cart cart-five">
+                  <div class="cart-text">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/1183/1183672.png"
+                      alt="react-symbol"
+                    />
+                  </div>
+                  <div
+                    class="progress-bar bar-react"
+                    role="progressbar"
+                    aria-valuenow="70"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="cart cart-six">
+                  <div class="cart-text">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png"
+                      alt="node-symbol"
+                    />
+                  </div>
+                  <div
+                    class="progress-bar bar-node"
+                    role="progressbar"
+                    aria-valuenow="50"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="cart cart-seven">
+                  <div class="cart-text">
+                    <img
+                      src="https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png"
+                      alt="express-symbol"
+                    />
+                  </div>
+                  <div
+                    class="progress-bar bar-express"
+                    role="progressbar"
+                    aria-valuenow="50"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="cart cart-eight">
+                  <div class="cart-text">
+                    <img
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/mysql-icon.png"
+                      alt="mysq-symbol"
+                    />
+                  </div>
+                  <div
+                    class="progress-bar bar-mysql"
+                    role="progressbar"
+                    aria-valuenow="40"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="cart cart-nine">
+                  <div class="cart-text">
+                    <img
+                      src="https://www.biteinteractive.com/wp-content/uploads/2021/05/git-vs-github.png"
+                      alt="git-symbol"
+                    />
+                  </div>
+                  <div
+                    class="progress-bar bar-git"
+                    role="progressbar"
+                    aria-valuenow="70"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="cart cart-ten">
+                  <div class="cart-text">
+                    <img
+                      src="https://cdn0.iconfinder.com/data/icons/development-2/24/database-512.png"
+                      alt="database-symbol"
+                    />
+                  </div>
+                  <div
+                    class="progress-bar bar-db"
+                    role="progressbar"
+                    aria-valuenow="30"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="carts-div tabcontent-skills" id="tablinks-soft-skills">
+              <div class="tabskills-content">
+                <div class="cart cart-one">
+                  <div class="cart-text">
+                    <strong>Time management</strong>
+                  </div>
+                </div>
+                <div class="cart cart-one">
+                  <div class="cart-text">
+                    <strong>Adaptability</strong>
+                  </div>
+                </div>
+                <div class="cart cart-one">
+                  <div class="cart-text">
+                    <strong>Problem-solving</strong>
+                  </div>
+                </div>
+                <div class="cart cart-four">
+                  <div class="cart-text">
+                    <strong>Critical thinking</strong>
+                  </div>
+                </div>
+                <div class="cart cart-five">
+                  <div class="cart-text">
+                    <strong>Creativity</strong>
+                  </div>
+                </div>
+                <div class="cart cart-six">
+                  <div class="cart-text">
+                    <strong>Self-motivation</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="tabcontent" id="certificates">
+            <h2><span>Certificates</span></h2>
+            <div class="carts-div">
+              <div class="cart cart-one">
+                <div class="cart-text">
+                  <h5>University of Michigan & Coursera</h5>
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSryPZkQ89j35S1J8ANO7Y5WZDBmkSMeVuLb3AYFzahzg&s"
+                    alt="logo-michigan"
+                  />
+                  <p>Introduction to HTML5</p>
+                </div>
+              </div>
+              <div class="cart cart-two">
+                <div class="cart-text">
+                  <h5>University of Michigan & Coursera</h5>
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSryPZkQ89j35S1J8ANO7Y5WZDBmkSMeVuLb3AYFzahzg&s"
+                    alt="logo-michigan"
+                  />
+                  <p>Introduction to CSS3</p> 
+                </div>
+              </div>
+              <div class="cart cart-three">
+                <div class="cart-text">
+                  <h5>University of Michigan & Coursera</h5>
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSryPZkQ89j35S1J8ANO7Y5WZDBmkSMeVuLb3AYFzahzg&s"
+                    alt="logo-michigan"
+                  />
+                  <p>Advanced Styling with Responsive Design</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="tabcontent" id="contact">
+            <h2><span>Contact</span></h2>
+            <div class="form-container">
+              <p>I'm always open to discussing product
+                design work or partnerships.</p>
+                <form>
+                  <label for="name" class="box-2">Name *</label>
+                  <br>
+                  <input type="text" id="name" class="box-3" required />
+                  <br>
+                  <label class="box-2" for="email">Email *</label>
+                  <br>
+                  <input type="text" class="box-3" required id="email"/>
+                  <br>
+                  <label class="box-2" for="tel">Phone *</label>
+                  <br>
+                  <input type="tel" placeholder="(___) ___ __ __" class="box-3" required  id="tel"/>
+                  <br>
+                  <label for="text-aria" >Message</label>
+                  <br>
+                  <textarea id="text-aria" cols="30" rows="10" placeholder="Please write your message here" required></textarea>
+                  <br>
+                  <button class="btn" type="submit">Send</button>
+                </form>
+              </div>
+          </article>
         </section>
+        <footer>
+          <p>&copy;2023 All Rights Reserved by umtymn</p>
+          <a href="#logo"><i class="far fa-caret-square-up"></i></a>
+        </footer>
       </section>
-    </section>
-  </main>
-</body>
+    </main>
+    <!-- js external link -->
+    <script src="./script.js"></script>
+  </body>
 </html>

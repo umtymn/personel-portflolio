@@ -1,5 +1,40 @@
+// get all the button for the add event listener
+const defaultOpenButton = document.getElementById("defaultOpen");
+defaultOpenButton.addEventListener("click", (e)=> {
+  openTab(e, 'home-page');
+});
 
-//tabcontent for the skills navigation
+const educationButton = document.getElementsByClassName("tablinks")[1];
+educationButton.addEventListener("click", (e)=> {
+  openTab(e, 'education');
+});
+
+const skillsButton = document.getElementsByClassName("tablinks")[2];
+skillsButton.addEventListener("click", (e) =>{
+  openTab(e, 'skills');
+});
+
+const certificatesButton = document.getElementsByClassName("tablinks")[3];
+certificatesButton.addEventListener("click", (e)=> {
+  openTab(e, 'certificates');
+});
+
+const contactButton = document.getElementsByClassName("tablinks")[4];
+contactButton.addEventListener("click", (e)=> {
+  openTab(e, 'contact');
+});
+
+const skillsDefaultOpenButton = document.getElementById("skillsDefaultOpen");
+skillsDefaultOpenButton.addEventListener("click", (e)=> {
+  openTabSkills(e, 'tablinks-tecnical-skills');
+});
+
+const softSkillsButton=document.getElementsByClassName("tablinks-skills")[1];
+softSkillsButton.addEventListener("click", (e)=>{
+  openTabSkills(e, 'tablinks-soft-skills')
+});
+
+//opanTab function for the first contain
 function openTab(evt, infoTabs) {
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -16,19 +51,7 @@ function openTab(evt, infoTabs) {
 
 document.getElementById("defaultOpen").click();
 
-
-/* 
-
--location lucerne icin tiklama ekle. google location konum kullan
--download hover ekle ve diger renkelerle ayni olsun.
--navbardaki butonlara height yükselt, iconlar biraz daha büyük olsun.
--fixed iconu degistir ve padding ver
--contact button hoverini ddegistir/boyutunu da degisitr
--contact phone zorunluluktan cikar
-
-*/
-
-//tabcontent for the skills navigation
+//opanTab function for the skills tab
 
 function openTabSkills(evt, infoTabs) {
   let i, tabcontent, tablinks;
@@ -45,17 +68,31 @@ function openTabSkills(evt, infoTabs) {
 }
 document.getElementById("skillsDefaultOpen").click();
 
-
 //dark mode
-const handleDarkMode = () => {
+const darkBtn=document.getElementById("dark-mode-btn");
+
+darkBtn.addEventListener("click",() => {
   let body = document.body;
   body.classList.toggle("dark-mode");
-};
 
-//change icons
+  let logo = document.getElementById("logo");
+  let logoSrc ="./images/logo-black.png" ;
+
+  if (body.classList.contains("dark-mode")) {
+    logoSrc = "./images/logo-white.png";
+  }
+  logo.src = logoSrc;
+});
+
+//change icons via dark mode
+
+let themeToggleDark = document.querySelector(".theme-toggle-dark");
+let themeToggleLight = document.querySelector(".theme-toggle-light");
+
+themeToggleDark.addEventListener("click",ToggleTheme);
+themeToggleLight.addEventListener("click", ToggleTheme)
+
 function ToggleTheme() {
-  let themeToggleDark = document.querySelector(".theme-toggle-dark");
-  let themeToggleLight = document.querySelector(".theme-toggle-light");
   if (themeToggleLight.style.display !== "none") {
     themeToggleLight.style.display = "none";
     themeToggleDark.style.display = "block";
@@ -63,5 +100,5 @@ function ToggleTheme() {
     themeToggleLight.style.display = "block";
     themeToggleDark.style.display = "none";
   }
-}
-ToggleTheme();
+};
+ToggleTheme()

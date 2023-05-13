@@ -7,7 +7,7 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
   height: auto;
-  background-image: url("./images/background-color.jpeg");
+  background-image: url("/images/background-img-light-mode.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,9 +31,21 @@ header #logo {
 }
 
 .dark-mode {
-  background-image: none;
-  background-color: black;
+  background-image: url("/images/background-img-dark-mode.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
+
+/* .dark-mode .tab-container * {
+  background-color: black;
+  color: white;
+} */
+/* .dark-mode .social-media-symbols .fa-brands, .dark-mode .contact-links .fa-solid{
+  color:black ;
+} */
+
 
 .container {
   display: flex;
@@ -137,12 +149,12 @@ a span:hover {
   width: 40%;
   height: 3rem;
   border-radius: 2rem;
-  background-color: rgb(247, 88, 96);
+  background-color: rgb(236,62,98);
   text-decoration: none;
 }
 
 #link-download-CV:hover {
-  background-color: linear-gradient(135deg, #f34079 40%, #fc894d);
+  background-color:rgb(244, 7, 86)
 }
 
 /* the content of portfolio (education, skills, contact form, etc.) */
@@ -157,7 +169,7 @@ a span:hover {
 /* navbar */
 .content .navbar {
   width: 60%;
-  height: 5rem;
+  height: 7rem;
   margin-top: 15rem;
   border-radius: 1.5rem;
   background: rgb(255, 255, 255);
@@ -170,8 +182,8 @@ a span:hover {
 .navbar .tablinks {
   background-color: rgb(243, 246, 246);
   border: none;
-  width: 16%;
-  height: 4rem;
+  width: 14%;
+  height: 4.5rem;
   border-radius: 1rem;
 }
 
@@ -187,7 +199,7 @@ a span:hover {
 }
 
 .nav-btn {
-  font-size: 0.7rem;
+  font-size: 1.5rem;
 }
 
 /* tab-content with js added and here styled */
@@ -205,7 +217,7 @@ a span:hover {
 
 .tabcontent h2:after {
   content: "";
-  left: 10rem;
+  left: 11.3rem;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -447,13 +459,13 @@ background-color: rgb(252,250,240)
 }
 
 .form-container form button:hover {
-  background-color: white;
-  color: rgb(228,48,109);
+  background-color:rgb(244, 7, 86);
+  cursor: pointer;
 }
 
 /* footer */
 footer {
-  height: 3rem;
+  height: 4rem;
   background-color: rgb(242,250, 254);
   border-radius:0 0 1rem 1rem ;
   margin-bottom: 2rem;
@@ -473,7 +485,6 @@ color:rgb(228,48,109);
   body {
     min-width: 480px;
   }
-  
   .container {
     flex-direction: column;
     margin: 0%;
@@ -493,4 +504,7 @@ color:rgb(228,48,109);
   #skills .cart{
     width: 30%;
   }
+  .form-container form input, textarea{
+    width: 100%;
+    }
 }

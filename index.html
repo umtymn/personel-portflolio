@@ -15,11 +15,10 @@
   </head>
   <body>
     <header>
-      <img id="logo" src="./images/logo.png" alt="logo" />
-      <button id="dark-mode-btn" onclick="handleDarkMode()">
+      <img id="logo" src="./images/logo-black.png" alt="logo" />
+      <button id="dark-mode-btn">
         <svg
           class="theme-toggle-dark svg-inline--fa fa-moon fa-w-16"
-          onclick="ToggleTheme()"
           aria-hidden="true"
           focusable="false"
           data-prefix="far"
@@ -35,7 +34,6 @@
         </svg>
         <svg
           class="theme-toggle-light active svg-inline--fa fa-sun fa-w-16"
-          onclick="ToggleTheme()"
           aria-hidden="true"
           focusable="false"
           data-prefix="far"
@@ -91,8 +89,12 @@
                 </a>
                 </li>
               <li>
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Lucerne, Switzerland</span>
+                <a class="contact-links-item"
+                href="https://www.google.ch/maps/place/Luzern/@47.0408508,8.2348509,12z/data=!3m1!4b1!4m6!3m5!1s0x478ffa2a79547379:0xaef02ad1409952af!8m2!3d47.0501682!4d8.3093072!16zL20vMDE5NGY1?hl=de">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Lucerne, Switzerland</span>
+                </a>
+                
               </li>
               <li>
                 <a
@@ -104,8 +106,11 @@
                 </a>
               </li>
               <li>
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>01.01.1991</span>
+                <a class="contact-links-item" href="http://www.google.com/calendar/event?action=TEMPLATE&text=Example%20Event&dates=20131124T010000Z/20131124T020000Z&details=Event%20Details%20Here&location=123%20Main%20St%2C%20Example%2C%20NY">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <span>01.01.1991</span>
+                </a>
+                
               </li>
             </ul>
           </div>
@@ -123,32 +128,30 @@
           <button
             class="tablinks"
             id="defaultOpen"
-            onclick="openTab(event, 'home-page')"
           >
             <i class="nav-btn fa-solid fa-house"></i>
             <br />
             Home
           </button>
-
-          <button class="tablinks" onclick="openTab(event, 'education')">
+          <button class="tablinks">
             <i class="nav-btn fa-solid fa-school"></i>
             <br />
             Education
           </button>
 
-          <button class="tablinks" onclick="openTab(event, 'skills')">
+          <button class="tablinks">
             <i class="nav-btn fas fa-cogs"></i>
             <br />
             Skills
           </button>
 
-          <button class="tablinks" onclick="openTab(event, 'certificates')">
+          <button class="tablinks">
             <i class="nav-btn fa-solid fa-certificate"></i>
             <br />
             Certificates
           </button>
 
-          <button class="tablinks" onclick="openTab(event, 'contact')">
+          <button class="tablinks">
             <i class="nav-btn fa-solid fa-address-card"></i>
             <br />
             Contact
@@ -310,13 +313,11 @@
               <button
                 class="tablinks-skills"
                 id="skillsDefaultOpen"
-                onclick="openTabSkills(event, 'tablinks-tecnical-skills')"
               >
                 Tecnical Skills
               </button>
               <button
                 class="tablinks-skills"
-                onclick="openTabSkills(event, 'tablinks-soft-skills')"
               >
                 Soft Skills
               </button>
@@ -404,7 +405,7 @@
                 <div class="cart cart-six">
                   <div class="cart-text">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png"
+                      src="https://cdn4.iconfinder.com/data/icons/logos-3/454/nodejs-new-pantone-white-512.png"
                       alt="node-symbol"
                     />
                   </div>
@@ -434,7 +435,7 @@
                 <div class="cart cart-eight">
                   <div class="cart-text">
                     <img
-                      src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/mysql-icon.png"
+                      src="https://hdeleon.net/wp-content/uploads/2018/02/mysql.png"
                       alt="mysq-symbol"
                     />
                   </div>
@@ -562,11 +563,11 @@
                   <br>
                   <input type="text" class="box-3" required id="email"/>
                   <br>
-                  <label class="box-2" for="tel">Phone *</label>
+                  <label class="box-2" for="tel">Phone</label>
                   <br>
-                  <input type="tel" placeholder="(___) ___ __ __" class="box-3" required  id="tel"/>
+                  <input type="tel" placeholder="(___) ___ __ __" class="box-3"  id="tel"/>
                   <br>
-                  <label for="text-aria" >Message</label>
+                  <label for="text-aria" >Message *</label>
                   <br>
                   <textarea id="text-aria" cols="30" rows="10" placeholder="Please write your message here" required></textarea>
                   <br>

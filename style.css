@@ -27,7 +27,7 @@ header #logo {
   height: 3rem;
   border: none;
   border-radius: 50%;
-  background-color:rgb(255, 255, 255) ;
+  background-color: rgb(255, 255, 255);
 }
 
 .dark-mode {
@@ -35,7 +35,6 @@ header #logo {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 /* .dark-mode .tab-container * {
@@ -46,15 +45,13 @@ header #logo {
   color:black ;
 } */
 
-
 .container {
   display: flex;
 }
 
 /* personal information and contact linsk */
 .personal-info {
-  flex: 2;
-  height:fit-content;
+  height: fit-content;
   display: flex;
   background-color: rgb(255, 255, 255);
   border-radius: 2rem;
@@ -95,10 +92,10 @@ figcaption {
 .contact-links .fa-solid:hover {
   color: rgb(255, 255, 255);
   background-color: rgb(247, 88, 96);
-  transition:  background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 a span:hover {
-  color:rgb(247, 88, 96) ;
+  color: rgb(247, 88, 96);
   transition: color 0.3s ease-in-out;
 }
 
@@ -122,7 +119,7 @@ a span:hover {
 }
 .contact-links ul {
   list-style: none;
-  padding:0;
+  padding: 0;
 }
 .contact-links ul li {
   margin-bottom: 1rem;
@@ -130,13 +127,13 @@ a span:hover {
 }
 
 .contact-links ul li::after {
-  content: '';
+  content: "";
   position: absolute;
   margin-top: 2rem;
-  left: 10%; /* set the left position to 25% to center the border */
-  width: 60%; /* set the width of the border to 50% */
-  height: 1px; /* set the height of the border to 2px */
-  background-color: gray ; /* set the color of the border */
+  left: 10%;
+  width: 60%; 
+  height: 1px;
+  background-color: gray;
 }
 
 #link-download-CV {
@@ -149,18 +146,18 @@ a span:hover {
   width: 40%;
   height: 3rem;
   border-radius: 2rem;
-  background-color: rgb(236,62,98);
+  background-color: rgb(236, 62, 98);
   text-decoration: none;
 }
 
 #link-download-CV:hover {
-  background-color:rgb(244, 7, 86)
+  background-color: rgb(244, 7, 86);
 }
 
 /* the content of portfolio (education, skills, contact form, etc.) */
 
 .content {
-  flex: 5;
+  flex: 2;
   display: flex;
   flex-direction: column;
   margin: 0 3rem;
@@ -192,7 +189,8 @@ a span:hover {
   color: rgb(255, 255, 255);
 }
 
-.navbar .tablinks:hover, #dark-mode-btn:hover {
+.navbar .tablinks:hover,
+#dark-mode-btn:hover {
   cursor: pointer;
   background-color: rgb(228, 48, 109);
   color: rgb(255, 255, 255);
@@ -222,11 +220,12 @@ a span:hover {
   bottom: 0;
   right: 0;
   height: 0.5em;
-  border-top: 3px solid rgb(236,62,98);
+  border-top: 3px solid rgb(236, 62, 98);
   width: 30%;
 }
 
-.carts-div, .tabskills-content{
+.carts-div,
+.tabskills-content {
   display: flex;
   flex-wrap: wrap;
 }
@@ -241,7 +240,7 @@ a span:hover {
   margin: 1rem;
   margin-left: 2rem;
   padding: 1rem;
-  text-align:center;
+  text-align: center;
 }
 
 .cart-icon {
@@ -272,17 +271,21 @@ a span:hover {
   flex: 3;
 }
 
-.cart-one, .cart-nine  {
+.cart-one,
+.cart-nine {
   background-color: rgb(252, 243, 255);
 }
-.cart-two, .cart-seven{
+.cart-two,
+.cart-seven {
   background-color: rgb(253, 250, 240);
 }
-.cart-three , .cart-ten{
+.cart-three,
+.cart-ten {
   background-color: rgb(252, 243, 255);
 }
 
-.cart-four, .cart-eight {
+.cart-four,
+.cart-eight {
   background-color: rgb(255, 243, 244);
 }
 .cart-five {
@@ -293,14 +296,13 @@ a span:hover {
   background-color: rgb(242, 250, 254);
 }
 
-
 /* skills */
 
-.navbar-skills button{
+.navbar-skills button {
   background: none;
   border: none;
 }
-.navbar-skills button:hover{
+.navbar-skills button:hover {
   cursor: pointer;
 }
 .navbar-skills button.active {
@@ -309,10 +311,9 @@ a span:hover {
   background: none;
   border: none;
   text-decoration: underline;
-
 }
 
-#skills .cart{
+#skills .cart {
   width: 25%;
   flex-direction: column;
   align-items: center;
@@ -321,7 +322,6 @@ a span:hover {
 .cart-text img {
   width: 5rem;
   height: 5rem;
- 
 }
 
 .progress-bar {
@@ -330,20 +330,18 @@ a span:hover {
   align-items: center;
   width: 3rem;
   height: 3rem;
-  border-radius: 50%;   
+  border-radius: 50%;
 }
 .bar-html {
-  background: 
-    radial-gradient(closest-side, white 79%, transparent 80% 100%),
-    conic-gradient(rgb(242,101,36) 95%, pink 0); 
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgb(242, 101, 36) 95%, pink 0);
 }
 .bar-html::before {
   content: "95%";
 }
 .bar-css {
-  background: 
-  radial-gradient(closest-side, white 79%, transparent 80% 100%),
-    conic-gradient(rgb(3,112,185) 90%, pink 0); 
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgb(3, 112, 185) 90%, pink 0);
 }
 
 .bar-css::before {
@@ -351,136 +349,129 @@ a span:hover {
 }
 
 .bar-bootstrap {
-  background: 
-    radial-gradient(closest-side, white 79%, transparent 80% 100%),
-    conic-gradient(rgb(120,15,246) 90%, pink 0);   
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgb(120, 15, 246) 90%, pink 0);
 }
 .bar-bootstrap::before {
   content: "90%";
 }
 
-.bar-js{
-  background: 
-  radial-gradient(closest-side, white 79%, transparent 80% 100%),
-  conic-gradient(rgb(247,223,28) 75%, pink 0); 
-  
+.bar-js {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgb(247, 223, 28) 75%, pink 0);
 }
 .bar-js::before {
   content: "75%";
 }
 
-.bar-react{
-  background: 
-  radial-gradient(closest-side, white 79%, transparent 80% 100%),
-  conic-gradient(rgb(83,161,255) 70%, pink 0); 
+.bar-react {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgb(83, 161, 255) 70%, pink 0);
 }
 .bar-react::before {
   content: "70%";
 }
 
 .bar-node {
-  background: 
-  radial-gradient(closest-side, white 79%, transparent 80% 100%),
-  conic-gradient(rgb(48,48,48) 50%, pink 0); 
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgb(48, 48, 48) 50%, pink 0);
 }
 
 .bar-node::before {
   content: "50%";
 }
 
-.bar-express{
-  background: 
-  radial-gradient(closest-side, white 79%, transparent 80% 100%),
-  conic-gradient(rgb(241,196,14) 50%, pink 0); 
+.bar-express {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgb(241, 196, 14) 50%, pink 0);
 }
 .bar-express::before {
   content: "50%";
 }
-.bar-mysql{
-  background: 
-  radial-gradient(closest-side, white 79%, transparent 80% 100%),
-  conic-gradient(rgb(1,117,143) 40%, pink 0); 
+.bar-mysql {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgb(1, 117, 143) 40%, pink 0);
 }
 .bar-mysql::before {
   content: "40%";
 }
 
 .bar-git {
-  background: 
-  radial-gradient(closest-side, white 79%, transparent 80% 100%),
-  conic-gradient(rgb(0,0,0) 70%, pink 0);
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgb(0, 0, 0) 70%, pink 0);
 }
 
 .bar-git::before {
   content: "70%";
 }
 
-.bar-db{ 
-  background: 
-  radial-gradient(closest-side, white 79%, transparent 80% 100%),
-  conic-gradient(rgb(0,0,0) 30%, pink 0);
+.bar-db {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgb(0, 0, 0) 30%, pink 0);
 }
-.bar-db::before{
+.bar-db::before {
   content: "30%";
 }
 
 /* contact form*/
 
 .form-container {
-  background-color: rgb(252,250,240);
+  background-color: rgb(252, 250, 240);
   padding: 2rem;
+  border-radius: 1rem;
 }
 
 .form-container p {
   text-align: center;
 }
 
-.form-container form input, textarea{
-width: 50%;
-margin:1rem 0;
-border: none;
-border-bottom: 0.01rem solid gray;
-outline: none;
-background-color: rgb(252,250,240)
+.form-container form input,
+textarea {
+  width: 50%;
+  margin: 1rem 0;
+  border: none;
+  border-bottom: 0.01rem solid gray;
+  outline: none;
+  background-color: rgb(252, 250, 240);
 }
 
-.form-container form input:focus, textarea:focus {
-  border-bottom: 0.1rem solid rgb(228,48,109);
+.form-container form input:focus,
+textarea:focus {
+  border-bottom: 0.1rem solid rgb(228, 48, 109);
 }
-
 
 .form-container form button {
-  background-color:rgb(228,48,109) ;
+  background-color: rgb(228, 48, 109);
   color: white;
   width: 5rem;
   height: 2rem;
   border: none;
-  border-radius: 0.5rem; 
+  border-radius: 0.5rem;
 }
 
 .form-container form button:hover {
-  background-color:rgb(244, 7, 86);
+  background-color: rgb(244, 7, 86);
   cursor: pointer;
 }
 
 /* footer */
 footer {
   height: 4rem;
-  background-color: rgb(242,250, 254);
-  border-radius:0 0 1rem 1rem ;
+  background-color: rgb(242, 250, 254);
+  border-radius: 0 0 1rem 1rem;
   margin-bottom: 2rem;
   text-align: center;
 }
 
 footer .far {
-font-size: 3rem;
-position: fixed;
-bottom: 0;
-right: 0;
-color:rgb(228,48,109);
+  font-size: 2rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: rgb(228, 48, 109);
 }
 
-
+/* media queries for the phone size */
 @media screen and (max-width: 480px) {
   body {
     min-width: 480px;
@@ -489,22 +480,30 @@ color:rgb(228,48,109);
     flex-direction: column;
     margin: 0%;
   }
-  .personal-info{
+  .personal-info {
     margin-left: 1rem;
     width: 90%;
+  }
+  .content {
+    width: 90%;
+    margin-left: 1rem;
   }
   .content .navbar {
     width: 100%;
     margin-top: 2rem;
     margin-left: 0;
   }
+  .content .navbar .tablinks {
+    width: 5rem;
+  }
   .cart {
     width: 100%;
   }
-  #skills .cart{
+  #skills .cart {
     width: 30%;
   }
-  .form-container form input, textarea{
+  .form-container form input,
+  textarea {
     width: 100%;
-    }
+  }
 }

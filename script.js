@@ -103,48 +103,6 @@ function ToggleTheme() {
 };
 ToggleTheme();
 
-// post form to backend 
-const myForm = document.getElementById("myForm");
-const inputName = document.getElementById("name");
-const inputEmail = document.getElementById("email");
-const inputPhone = document.getElementById("phone");
-const inputMessage= document.getElementById("text-aria");
-
-const BASE_URL = "http://localhost:8090/messages";
-const addPost = async (event) => {
-  if (event) {
-    event.preventDefault();
-  }
-
-  const response = await fetch(BASE_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name: inputName.value,
-      email: inputEmail.value,
-      number: inputPhone.value,
-      message: inputMessage.value,
-    }),
-  });
-
-  if (response.ok) {
-    const data = await response.json();
-    console.log(data);
-    inputName.value = "";
-    inputEmail.value = "";
-    inputPhone.value = "";
-    inputMessage.value = "";
-  } else {
-    console.error("Error sending message!!!!");
-  }
-};
-
-if (myForm) {
-  myForm.addEventListener("submit", addPost);
-}
-
 // toastify
 myForm.addEventListener("submit", (e)=>{
   e.preventDefault();

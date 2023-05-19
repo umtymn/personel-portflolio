@@ -103,6 +103,26 @@ function ToggleTheme() {
 };
 ToggleTheme();
 
+// post form to backend 
+const myForm = document.getElementById("myForm");
+const inputName = document.getElementById("name");
+const inputEmail = document.getElementById("email");
+const inputPhone = document.getElementById("phone");
+const inputMessage= document.getElementById("text-aria");
+
+const addPost = async (e) => {
+e.preventDefault();
+inputName.value = "";
+inputEmail.value = "";
+inputPhone.value = "";
+inputMessage.value = "";
+
+};
+
+if (myForm) {
+  myForm.addEventListener("submit", addPost);
+}
+
 // toastify
 myForm.addEventListener("submit", (e)=>{
   e.preventDefault();

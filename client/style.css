@@ -7,7 +7,7 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
   height: auto;
-  background-image: url("/images/background-img-light-mode.png");
+  background-image: url("/client/images/background-img-light-mode.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,7 +31,7 @@ header #logo {
 }
 
 .dark-mode {
-  background-image: url("/images/background-img-dark-mode.jpg");
+  background-image: url("/client/images/background-img-dark-mode.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -165,7 +165,6 @@ a span:hover {
 
 /* navbar */
 .content .navbar {
-  width: 60%;
   height: 7rem;
   margin-top: 15rem;
   border-radius: 1.5rem;
@@ -179,7 +178,7 @@ a span:hover {
 .navbar .tablinks {
   background-color: rgb(243, 246, 246);
   border: none;
-  width: 14%;
+  width: 5rem;
   height: 4.5rem;
   border-radius: 1rem;
 }
@@ -454,6 +453,7 @@ textarea:focus {
   cursor: pointer;
 }
 
+
 /* footer */
 footer {
   height: 4rem;
@@ -489,7 +489,6 @@ footer .far {
     margin-left: 1rem;
   }
   .content .navbar {
-    width: 100%;
     margin-top: 2rem;
     margin-left: 0;
   }

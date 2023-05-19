@@ -7,6 +7,8 @@
     <title>Personal Portfolio</title>
     <!-- Css external link -->
     <link rel="stylesheet" href="style.css" />
+    <!-- link of toastify -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- fontawsome link -->
     <script
       src="https://kit.fontawesome.com/9b59ce0d1e.js"
@@ -549,12 +551,12 @@
                 I'm always open to discussing product design work or
                 partnerships.
               </p>
-              <form>
+              <form id="myForm">
                 <label for="name" class="box-2">Name *</label>
                 <br />
                 <input type="text" id="name" class="box-3" required />
                 <br />
-                <label class="box-2" for="email">Email *</label>
+                <label class="box-2" for="email" id="e-mail">Email *</label>
                 <br />
                 <input type="text" class="box-3" required id="email" />
                 <br />
@@ -564,7 +566,7 @@
                   type="tel"
                   placeholder="(___) ___ __ __"
                   class="box-3"
-                  id="tel"
+                  id="phone"
                 />
                 <br />
                 <label for="text-aria">Message *</label>
@@ -577,7 +579,7 @@
                   required
                 ></textarea>
                 <br />
-                <button class="btn" type="submit">Send</button>
+                <button class="btn" id="submitBtn" type="submit">Send</button>
               </form>
             </div>
           </article>
@@ -588,7 +590,8 @@
         </footer>
       </section>
     </main>
-    <!-- js external link -->
+    <!-- js external link  and toastify link-->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

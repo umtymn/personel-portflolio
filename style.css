@@ -7,7 +7,7 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
   height: auto;
-  background-image: url("/client/images/background-img-light-mode.png");
+  background-image: url("/images/background-img-light-mode.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,7 +31,7 @@ header #logo {
 }
 
 .dark-mode {
-  background-image: url("/client/images/background-img-dark-mode.jpg");
+  background-image: url("/images/background-img-dark-mode.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

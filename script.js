@@ -1,37 +1,19 @@
-// get all the button for the add event listener
-const defaultOpenButton = document.getElementById("defaultOpen");
-defaultOpenButton.addEventListener("click", (e)=> {
-  openTab(e, 'home-page');
+//call all the buttons which is in the first tab and add eventlistener
+const firstOpenTabsButtons = document.querySelectorAll(".tablinks");
+firstOpenTabsButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    let targetId = button.dataset.target;
+    openTab(e, targetId);
+  });
 });
 
-const educationButton = document.getElementsByClassName("tablinks")[1];
-educationButton.addEventListener("click", (e)=> {
-  openTab(e, 'education');
-});
-
-const skillsButton = document.getElementsByClassName("tablinks")[2];
-skillsButton.addEventListener("click", (e) =>{
-  openTab(e, 'skills');
-});
-
-const certificatesButton = document.getElementsByClassName("tablinks")[3];
-certificatesButton.addEventListener("click", (e)=> {
-  openTab(e, 'certificates');
-});
-
-const contactButton = document.getElementsByClassName("tablinks")[4];
-contactButton.addEventListener("click", (e)=> {
-  openTab(e, 'contact');
-});
-
-const skillsDefaultOpenButton = document.getElementById("skillsDefaultOpen");
-skillsDefaultOpenButton.addEventListener("click", (e)=> {
-  openTabSkills(e, 'tablinks-tecnical-skills');
-});
-
-const softSkillsButton=document.getElementsByClassName("tablinks-skills")[1];
-softSkillsButton.addEventListener("click", (e)=>{
-  openTabSkills(e, 'tablinks-soft-skills')
+//call all the buttons which is in the skill tab and add eventlistener
+const skillsOpenTabsButtons = document.querySelectorAll(".tablinks-skills");
+skillsOpenTabsButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    let targetId = button.dataset.target;
+    openTabSkills(e, targetId);
+  });
 });
 
 //opanTab function for the first contain
@@ -67,6 +49,7 @@ function openTabSkills(evt, infoTabs) {
   evt.currentTarget.className += " active";
 }
 document.getElementById("skillsDefaultOpen").click();
+
 
 //dark mode
 const darkBtn=document.getElementById("dark-mode-btn");

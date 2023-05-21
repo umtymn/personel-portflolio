@@ -15,7 +15,8 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 3rem 1rem;
+  min-width: 480px;
 }
 
 header #logo {
@@ -73,6 +74,7 @@ header #logo {
 
 .container {
   display: flex;
+  min-width: 480px;
 }
 
 /* personal information and contact links */
@@ -525,7 +527,7 @@ footer .far {
 /* media queries for the phone size */
 @media screen and (max-width: 480px) {
   body {
-    min-width: 480px;
+    width: 100%;
   }
   .container {
     flex-direction: column;
